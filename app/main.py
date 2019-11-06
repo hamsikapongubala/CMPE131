@@ -39,6 +39,10 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+@app.route('/notifications')
+def notifications():
+    return redirect(url_for('home'))
+
 @app.route("/register")
 @app.route("/register", methods=['GET', 'POST'])
 def signUp():
