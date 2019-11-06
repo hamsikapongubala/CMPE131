@@ -1,4 +1,4 @@
-<!-- this will be the main html for inherit -->
+﻿<!-- this will be the main html for inherit -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -20,30 +20,33 @@
 	<body>
 		<header>
 			<nav>
-				<ul class="nav justify-content-end navbar navbar-light" style="background-color: #e3f2fd;">
-							{% if current_user.is_anonymous %}
-								<li class="nav-item">
-										<a class="nav-link" href="{{url_for("login")}}">Sign In</a>
-								</li>
-								<li class="nav-item">
-										<a class="nav-link" href="{{url_for("signUp")}}">Sign Up</a>
-								</li>
-							{% else %}
-								<li class="nav-item">
-									<a class="nav-link active" href="{{url_for("home", username=current_user.username)}}">Home</a>
-								</li>
-								<li class="nav-item">
-										<a class="nav-link" href="{{url_for("logout")}}">Log Out</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="{{url_for("add")}}">Add Tasks</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="{{url_for("newList")}}">Add List</a>
-								</li>
+                <ul class="nav justify-content-end navbar navbar-light" style="background-color: #e3f2fd;">
+                    {% if current_user.is_anonymous %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for("login")}}">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for("signUp")}}">Sign Up</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url_for("home", username=current_user.username)}}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for("notifications")}}">Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for("logout")}}">Log Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for("add")}}">Add Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for("newList")}}">Add List</a>
+                    </li>
 
-							{% endif %}
-					</ul>
+                    {% endif %}
+                </ul>
 			</nav>
 			<header>
 				<main role ="main" class='container'>
